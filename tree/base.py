@@ -62,10 +62,6 @@ class DecisionTree:
             counts = Y.value_counts()
             most_occuring_value = counts.idxmax()
             return most_occuring_value 
-
-        
-
-    
             
             
                         
@@ -112,35 +108,7 @@ class DecisionTree:
         predictions = [self.make_prediction(x, self.root) for _, x in X.iterrows()]
         return pd.Series(predictions)    
         pass
-
-    # def plot(self) -> None:
-    #     """
-    #     Function to plot the tree
-
-    #     Output Example:
-    #     ?(X1 > 4)
-    #         Y: ?(X2 > 7)
-    #             Y: Class A
-    #             N: Class B
-    #         N: Class C
-    #     Where Y => Yes and N => No
-    #     """
-    #     self._print_tree_recursive(self.root, depth=0, side=None)
-    #     pass
-    # def _print_tree_recursive(self, node, depth, side):
-    #     if node is None:
-    #         return
-
-    #     indent = '    ' * depth
-    #     if node.is_leaf():
-    #         print(f"{indent}{side} Leaf: {round(node.value,3)}")
-    #     else:
-    #         print(f"{indent}{side} Split on {[node.feature_index]} <= {round(node.threshold,3)}, "
-    #               f"Information Gain: {round(node.info_gain,3)}")
-    #         print(f"{indent}|-- Left:")
-    #         self._print_tree_recursive(node.left, depth + 1, side='L')
-    #         print(f"{indent}|-- Right:")
-    #         self._print_tree_recursive(node.right, depth + 1, side='R')
+   
     
     def plot(self) -> None:
         """
